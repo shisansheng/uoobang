@@ -104,6 +104,18 @@ $actcolor:#00336C;
 .local::before{
 	content:'\e612';
 }
+.basket::before{
+	content:'\e62f';
+}
+.qq::before{
+	content:'\e629';
+}
+.wechat::before{
+	content:'\e673';
+}
+.weibo::before{
+	content:'\e637';
+}
 @keyframes menushow{
 	0%{
 		opacity: 0;
@@ -135,7 +147,7 @@ $actcolor:#00336C;
 	top:0;
 	.logo{
 		width:330px;
-		padding:27px 10px 28px 0;
+		padding:19px 10px 28px 0;
 		height:100%;
 		img{
 			width:auto;
@@ -396,8 +408,7 @@ $actcolor:#00336C;
 			width:auto;
 			display: inline-block;
 		}
-	}
-	
+	}	
 }
 // ban end;
 
@@ -504,7 +515,6 @@ $actcolor:#00336C;
 .about{
 	background:$white;
 	padding-top:60px;
-    padding-bottom:45px;
 	.cont{
 		width:80%;
 		margin:0 auto;
@@ -626,17 +636,72 @@ $actcolor:#00336C;
 
 // footer start;
 .footer{
-	height:130px;
-	background:darken($actcolor,20%);
+	height:auto;
+	background:darken($actcolor,10%);
 	text-align:center;
-	padding-top:40px;
-	.nav-list{
-		text-align: center;
-		.nav-li{
-			display: inline-block;
-			margin:0 20px;
+	padding-top:20px;
+	.top{
+		height:40px;
+		border-bottom:1px solid $gray9;
+		background:darken($actcolor,10%);
+		.link-btn{
+			float:left;
+			font-size:18px;
+			margin-right:20px;
+			line-height: 30px;
 			a{
 				color:$white;
+				position:relative;
+				&:hover{
+					color:lighten($actcolor,10%);
+				}
+			}
+		}
+		.fr{
+			span{
+				color:$gray9;
+				font-size:18px;
+				line-height: 40px;
+				font-weight:bold;
+			}
+			a{
+				color: $gray9;
+				background:darken($actcolor,15%);
+			    display: inline-block;
+			    padding: 2px 28px;
+			    margin-bottom: 0;
+			    font-size: 16px;
+			    font-weight: normal;
+			    line-height: 30px;
+			    border-radius:15px;
+			    text-align: center;
+			    white-space: nowrap;
+			    vertical-align: top;
+			    cursor: pointer;
+			    margin-left:20px;
+			    &:hover{
+			    	background:lighten($actcolor,30%);
+			    	color:$white;
+			    }
+			}
+		}
+	}
+	.middle{
+		.tit{
+			color: $white;
+		    margin: 0;
+		    margin-top: 30px;
+		    margin-bottom: 20px;
+		    font-size:24px;
+		}
+		.msg{
+			color:$gray9;
+			font-size:14px;
+			line-height: 30px;
+			text-align: center;
+			a{
+				display: inline-block;
+				color:$gray9;
 			}
 		}
 	}
@@ -737,7 +802,7 @@ $actcolor:#00336C;
 			display: none;
 		}
 		.logo{
-			padding:10px 0 48px 0;
+			padding:10px 0 40px 0;
 			float:none;
 			width:100%;
 			.logo-ph{
@@ -769,8 +834,7 @@ $actcolor:#00336C;
 				text-align: right;
 			}
 		}
-	}
-	
+	}	
 }
 @media only screen and (max-width:768px){
 	.clm-s-11{
@@ -832,13 +896,32 @@ $actcolor:#00336C;
 		}
 	}
 	.footer{
-		height:100px;
 		padding-top:30px;
-		.nav-list{
-			display: none;
+		.top{
+			text-align: center;
+			height:auto;
+			padding-bottom:20px;
+			.fl,.fr{
+				float: none;
+			}
+			.link-btn{
+				display: inline-block;
+				float: none;
+			}
+			.fr{
+				span{
+					display: block;
+					font-size: 14px;
+				}
+				a{
+					margin-top:5px;
+				}
+			}
 		}
-		.cpright{
-			margin-top:0;
+		.middle{
+			.tit{
+				font-size:14px;
+			}
 		}
 	}
 }
