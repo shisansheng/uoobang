@@ -150,7 +150,7 @@ $actcolor:#00336C;
 	top:0;
 	.logo{
 		width:330px;
-		padding:19px 10px 28px 0;
+		padding:19px 10px 20px 0;
 		height:100%;
 		img{
 			width:auto;
@@ -811,6 +811,25 @@ $actcolor:#00336C;
 	}
 }
 // center end;
+
+// sec start;
+.sec{
+	height:300px;
+	.intro{
+		font-size:14px;
+		line-height: 24px;
+		color:$black3;
+		text-align: center;
+		margin:50px 0;
+	}
+}
+.sec01,.sec03{
+	background:$white;
+}
+.sec02{
+	background:$backgray;
+}
+// sec end;
 
 @media only screen and (max-width: 992px){
 	.title{
