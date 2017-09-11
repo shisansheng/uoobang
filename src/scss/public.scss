@@ -640,13 +640,12 @@ $actcolor:#00336C;
 // footer start;
 .footer{
 	height:auto;
-	background:darken($actcolor,10%);
+	background:$black3;
 	text-align:center;
-	padding-top:20px;
+	padding:20px 0 10px;
 	.top{
 		height:40px;
-		border-bottom:1px solid $actcolor;
-		background:darken($actcolor,10%);
+		border-bottom:1px solid #3e3e3e;
 		.link-btn{
 			float:left;
 			font-size:18px;
@@ -669,7 +668,7 @@ $actcolor:#00336C;
 			}
 			a{
 				color: $gray9;
-				background:darken($actcolor,15%);
+				background:#484848;
 			    display: inline-block;
 			    padding: 2px 28px;
 			    margin-bottom: 0;
