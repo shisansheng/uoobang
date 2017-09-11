@@ -645,7 +645,7 @@ $actcolor:#00336C;
 	padding-top:20px;
 	.top{
 		height:40px;
-		border-bottom:1px solid $gray9;
+		border-bottom:1px solid $actcolor;
 		background:darken($actcolor,10%);
 		.link-btn{
 			float:left;
