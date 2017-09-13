@@ -15,6 +15,21 @@ $actcolor:#00336C;
     url('../fonts/iconfont.ttf') format('truetype'),
     url('../fonts/iconfont.svg#iconfont') format('svg');
 }
+.clearfix:after {
+ 	visibility: hidden; 
+ 	display: block; 
+ 	font-size: 0; 
+ 	content: " "; 
+ 	clear: both; 
+ 	height: 0; 
+ }  
+
+* html .clearfix{ 
+ 	zoom: 1; 
+} /* IE6 */ 
+*:first-child+html .clearfix { 
+ 	zoom: 1; 
+} /* IE7 */ 
 
 .title{
 	padding-top:50px;
@@ -810,7 +825,72 @@ $actcolor:#00336C;
 			}
 		}
 	}
+	.inner{
+		overflow:hidden;
+		.pic{
+		    border: 1px solid #d5d5d5;
+		    padding: 13px;
+		    text-align: center;
+		    float: left;
+		}
+		p {
+		    line-height: 40px;
+		    font-size: 18px;
+		    text-align: left;
+		    span{
+			    color:$actcolor;
+			}
+			img{
+				width:auto;
+				height:auto;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+	.show{
+		ul{
+			width:100%;
+		}
+		&.mobile-app,&.background{
+			display: none;
+		}
+		.case-item{
+			width:24%;
+			float: left;
+			height:auto;
+			margin-bottom:46px;
+			padding:0 5px;
+			box-sizing: border-box;
+		}
+		.case-img{
+			width:100%;
+			height:auto;
+		}
+		.case-title{
+			padding: 30px 20px;
+		    margin: 0;
+		    text-align: left;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    font-size: 18px;
+		    font-weight: normal;
+		    background: #fff;
+		}
+		.center-box{
+			box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.04);
+		    transition: all 0.2s ease-in-out 0s;
+		    position: relative
+
+			&:hover{
+			    box-shadow: 0 10px 35px 5px rgba(0, 0, 0, 0.2);
+			    transform: translateY(-15px);
+			}
+		}
+	}
 }
+
 // center end;
 
 // sec start;
@@ -883,6 +963,9 @@ $actcolor:#00336C;
 		}
 	}	
 	.center{
+		.container{
+			padding-top:0;
+		}
 		.cen-inner{
 			.cen-list{
 				padding:50px 0;
@@ -895,6 +978,30 @@ $actcolor:#00336C;
 					width:120px;
 					height:120px;
 				}
+			}
+		}
+		.cen-tit{
+			.name{
+				text-align: center;
+				padding-bottom:15px;
+			}
+			.link-btn{
+				text-align: center;
+			}
+		}
+		.inner{
+			.pic{
+			    float: none;
+			    width: 90%;
+			    max-width: 395px;
+			    margin: 0 auto;
+			    margin-bottom: 20px;
+			}
+			p {
+			    float: none;
+			    width: 95%;
+			    margin: 0 auto;
+			    text-align: center;
 			}
 		}
 	}
@@ -928,6 +1035,14 @@ $actcolor:#00336C;
 		.title-ch{
 			.normal,.big{
 				font-size:27px;
+			}
+		}
+		.tit{
+			img{
+				height:20px;
+			}
+			.dot,.slogen{
+				font-size: 18px;
 			}
 		}
 	}
@@ -991,116 +1106,28 @@ $actcolor:#00336C;
 			}
 		}
 	}
+	.center{
+		.inner{
+			p{
+				font-size:14px;
+				line-height: 26px;
+				img{
+					width:20px;
+					height:20px;
+				}
+			}
+		}
+		.show{
+			.case-item{
+				width:49%;
+				float: left;
+				height:auto;
+				margin-bottom:46px;
+				padding:0 5px;
+				box-sizing: border-box;
+			}
+		}
+	}
+
 }
 /*container开始*/
-.container ul{
-	width:100%;
-}
-.container .mobile-app{
-	display: none;
-}
-.container .background{
-	display: none;
-}
-.container .case-item{
-	width:24%;
-	float: left;
-	height:auto;
-	margin-bottom:46px;
-	padding:0 5px;
-	box-sizing: border-box;
-	
-}
-.container .case-img{
-	width:100%;
-	height:auto;
-}
-.container .case-img img{
-	width:100%;
-	display: block;
-}
-.container .case-title{
-	padding: 30px 20px;
-    margin: 0;
-    text-align: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 18px;
-    font-weight: normal;
-    background: #fff;
-}
-.container .center-box{
-	box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.04);
-    transition: all 0.2s ease-in-out 0s;
-    position: relative
-}
-.container .center-box:hover{
-    -moz-box-shadow: 0 10px 35px 5px rgba(0, 0, 0, 0.2);
-    -webkit-box-shadow: 0 10px 35px 5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 10px 35px 5px rgba(0, 0, 0, 0.2);
-    transform: translateY(-15px);
-}
-.clearfix:after {
- 	visibility: hidden; 
- 	display: block; 
- 	font-size: 0; 
- 	content: " "; 
- 	clear: both; 
- 	height: 0; 
- }  
- * html .clearfix{ 
- 	zoom: 1; 
- } /* IE6 */ 
- *:first-child+html .clearfix { 
- 	zoom: 1; 
-} /* IE7 */ 
-
-/*** culture css **/
-
-/*container结束*/
-
-/*媒体查询开始*/
-@media (max-width: 1680px) {
-	.banner{
-		height:300px;
-		background: url(../images/case_show_bg.jpg);
-		background-size: auto 100%;
-		background-position: center 100%;
-	}
-
-}
-@media (max-width: 768px){
-	.banner{
-		width:100%;
-		height:auto;
-		background: none;
-	}
-	.banner-pc{
-		display: none;
-	}
-	.banner-ph{
-		display: block;
-		width:100%;
-		height:auto;
-	}
-	
-	.container{
-		padding-top:50px;
-	}
-	.container .case-item{
-		width:49%;
-		float: left;
-		height:auto;
-		margin-bottom:46px;
-		padding:0 5px;
-		box-sizing: border-box;
-		
-	}
-}
-
-
-/*媒体查询结束*/
-
-
-

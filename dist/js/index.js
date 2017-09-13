@@ -1,1 +1,1 @@
-$(function(){(new WOW).init(),$(".link-btn .chose").on("click",function(){var i=$(this).index(),n=$(this).attr("title");$(".cen-tit .name").text(n),$(".show").eq(i).show().siblings(".show").hide(),console.log(i,n)})});
+$(function(){(new WOW).init(),$(".link-btn .chose").on("click",function(){var i=$(this).index(),t=$(this).attr("title");$(".cen-tit .name").text(t),$(".show").eq(i).show().siblings(".show").hide()})});
