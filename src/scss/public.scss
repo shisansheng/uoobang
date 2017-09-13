@@ -179,7 +179,7 @@ $actcolor:#00336C;
 		text-align: right;
 		.nav-li{
 			display: inline-block;
-			margin:0 30px;
+			margin:0 15px;
 			a{
 				color:$white;
 				display: block;
@@ -750,6 +750,7 @@ $actcolor:#00336C;
 				color:$actcolor;
 				border:1px solid $actcolor;
 				border-radius:15px;
+				margin-top:5px;
 				&:hover{
 					background:$actcolor;
 					color:$white;
@@ -881,8 +882,7 @@ $actcolor:#00336C;
 		.center-box{
 			box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.04);
 		    transition: all 0.2s ease-in-out 0s;
-		    position: relative
-
+		    position: relative;
 			&:hover{
 			    box-shadow: 0 10px 35px 5px rgba(0, 0, 0, 0.2);
 			    transform: translateY(-15px);

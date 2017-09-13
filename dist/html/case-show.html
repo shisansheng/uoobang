@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>软件网站模板</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../fonts/iconfont.css">
+	<link rel="stylesheet" href="../css/case-show.css">
+</head>
+<body>
+	<div class="header">
+		<div class="header-inner">
+			<div class="logo">
+				<a href="../index.html">
+					<img src="../img/logo-b.png" alt="">
+				</a>
+			</div>
+			<div class="sch-box">
+				<input type="text" id="getUrl" placeholder="输入网址查看">
+				<div id="schBtn">查看</div>
+			</div>
+			<div class="trans-nav">
+				<ul>
+					<li class="active">
+						<a href="javascript:;" data-width="100%" class="active" title="宽屏电脑">
+							<i class="iconfont">&#xe622;</i>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" data-width="1044" class="active" title="平板横屏">
+							<i class="iconfont">&#xe60d;</i>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" data-width="788" class="active" title="平板竖屏">
+							<i class="iconfont">&#xe60e;</i>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" data-width="500" class="active" title="手机横屏">
+							<i class="iconfont">&#xe62a;</i>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" data-width="340" class="active" title="手机竖屏">
+							<i class="iconfont">&#xe61c;</i>
+						</a>
+					</li>
+					<li id="linkout">
+						<a href="javascript:;" data-width="100%" class="active" title="打开网址">
+							<i class="iconfont">&#xe67a;</i>
+						</a>
+					</li>
+					<li id="qrBtn">
+						<a href="javascript:;" data-width="100%" class="active" title="查看二维码">
+							<i class="iconfont">&#xe613;</i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="iframe-cont">
+			<iframe src="../index.html" frameborder="0"></iframe>
+		</div>
+	</div>
+	<div class="popqr">
+		<div class="qrtxt">
+			<h3>用微信扫描二维码，分享到朋友圈！</h3>
+			<div id="qrcode"></div>	
+		</div>
+		<div class="qrbtm">
+			<div class="confirm">确认</div>
+		</div>
+	</div>
+	<div class="mask"></div>
+</body>
+	<script src="../js/jquery-1.12.4.js"></script>
+	<script src="../js/jquery.qrcode.min.js"></script>
+	<script>
+		$(function(){
+			// 效果切换；
+			$('.trans-nav li').on('click',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				var wid = $(this).find('a').attr('data-width');
+				$('.iframe-cont').width(wid);
+			});
+
+			// 搜索功能；
+			$('#schBtn').on('click',function(){
+				var showUrl = $('#getUrl').val();
+				$('iframe').attr('src','http://' + showUrl);
+			});
+
+			// 打开链接；
+			$('#linkout').on('click',function(){
+				var linkUrl = $('iframe').attr('src');
+				window.location.href = linkUrl;
+			}); 
+
+			// 二维码；
+			function generateQRCode(rendermethod, picwidth, picheight, url) {
+		    	$("#qrcode").qrcode({ 
+		            render: rendermethod, // 渲染方式有table方式（IE兼容）和canvas方式
+		            width: picwidth, //宽度 
+		            height:picheight, //高度 
+		            text: utf16to8(url), //内容 
+		            typeNumber:-1,//计算模式
+		            correctLevel:2,//二维码纠错级别
+		            background:"#ffffff",//背景颜色
+		            foreground:"#000000"  //二维码颜色
+		        });
+		    }
+	        //中文编码格式转换
+		    function utf16to8(str) {
+		        var out, i, len, c;
+		        out = "";
+		        len = str.length;
+		        for (i = 0; i < len; i++) {
+		            c = str.charCodeAt(i);
+		            if ((c >= 0x0001) && (c <= 0x007F)) {
+		                out += str.charAt(i);
+		            } else if (c > 0x07FF) {
+		                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
+		                out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
+		                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+		            } else {
+		                out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
+		                out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
+		            }
+		        }
+		        return out;
+		    }   
+
+			$('#qrBtn').on('click',function(){
+				var qrUrl = $('iframe').attr('src');
+				$('.mask').show();
+
+				$('#qrcode').html('');
+			    function init() {
+			        generateQRCode("table",200, 200, qrUrl);
+			    }
+			    init();
+			   
+			    $('.popqr').show();
+			    $('.popqr .confirm').on('click',function(){
+			    	$('.popqr').hide();
+			    	$('.mask').hide();
+			    })
+			});
+
+			//屏幕宽度判断；
+			var screenWid = $(window).width();
+		})
+	</script>
+</html>
