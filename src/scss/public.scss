@@ -461,7 +461,7 @@ $actcolor:#00336C;
 			}
 			.bg1,.bg2,.bg3{
 				height:100%;
-				background-image:url('../img/ser-bg.jpg');
+				background-image:url('../img/ser-bg-01.jpg');
 				background-repeat: no-repeat;
 			    background-size: cover;
 			    background-attachment: scroll;
@@ -470,6 +470,12 @@ $actcolor:#00336C;
 			    left:0;
 			    top:0;
 			    z-index: 1;
+			}
+			.bg2{
+				background-image:url('../img/ser-bg-02.jpg');
+			}
+			.bg3{
+				background-image:url('../img/ser-bg-03.jpg');
 			}
 			.mask{
 				height:100%;
